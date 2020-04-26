@@ -4,14 +4,20 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Weather Application</title>
+		<link rel="icon" href="/img/logo.svg">
+		<title>Weather App | About</title>
 		<link rel="stylesheet" href="/css/style.css">
 	</head>
 
 	<body>
-		<h1>{{ title }}</h1>
+		<main>
+			<header class="header">
+				{{> header }}
+			</header>
+		</main>
 
-		<img src="/img/me.jpg">
+		{{> footer }}
+
 	</body>
 
 </html>
