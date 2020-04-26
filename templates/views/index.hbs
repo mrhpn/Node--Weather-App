@@ -14,9 +14,17 @@
 			<header class="header">
 				{{> header }}
 			</header>
+
+			<form class="form">
+				<label for="location" class="form__label">Type towns, city or country to see the weather forecast... </label>
+				<input type="text" name="location" id="location" placeholder="location" class="form__input">
+				<button class="form__button">Search</button>
+			</form>
 		</main>
 
 		{{> footer }}
+
+		<script src="/js/app.js"></script>
 	</body>
 
 </html>
