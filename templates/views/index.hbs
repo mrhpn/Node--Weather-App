@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" href="/img/logo.svg">
 		<title>Weather</title>
+		<link rel="stylesheet" href="/css/loading.css">
 		<link rel="stylesheet" href="/css/style.css">
 	</head>
 
@@ -14,13 +15,80 @@
 			<header class="header">
 				{{> header }}
 			</header>
-
 			<form class="form">
-				<label for="location" class="form__label">Type towns, city or country to see the weather forecast... </label>
-				<input type="text" name="location" id="location" placeholder="location" class="form__input">
+				<label for="location" class="form__label">
+					Type towns or city to see the weather forecast!
+				</label>
+				<input type="text" name="location" id="location" placeholder="location" class="form__input" autocomplete="off"
+					autofocus="on">
 				<button class="form__button">Search</button>
 			</form>
+
+			<div class="loading hide">
+				<div class="loadingio-spinner-magnify-f8wmbfeqkjo">
+					<div class="ldio-3i900dt477u">
+						<div>
+							<div>
+								<div> </div>
+								<div> </div>
+							</div>
+							<p class="searching">Searching . . .</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<p class="searched">
+				Search result for:
+				<span class="searched__address">Yangon</span>
+			</p>
+
+			<section class="result">
+				<div class="result__box">
+					<div class="result__box--style result__box--temperature">
+						<p>
+							Temperature
+							<ion-icon name="thermometer-outline" class="icon-measure">
+							</ion-icon>
+						</p>
+						<span class="temperature">35°F</span>
+					</div>
+					<div class="result__box--style result__box--humidity">
+						<p>
+							Humidity
+							<ion-icon name="trail-sign-outline" class="icon-measure">
+							</ion-icon>
+						</p>
+						<span class="humidity">35G</span>
+					</div>
+					<div class="result__box--style result__box--precipProbability">
+						<p>
+							Precip Probability
+							<ion-icon name="rainy-outline" class="icon-measure">
+							</ion-icon>
+						</p>
+						<span class="precipProbability">35%</span>
+					</div>
+				</div>
+
+				<p class="summary__box">
+					Summary:
+					<span class="summary__box--text">
+						Cloudy
+					</span>
+				</p>
+
+				<p class="daily__box">
+					Daily:
+					<span class="daily__box--text">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					</span>
+					<div class="daily__box--icon"></div>
+				</p>
+			</section>
+
 		</main>
+
 
 		{{> footer }}
 
