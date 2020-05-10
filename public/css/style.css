@@ -273,6 +273,55 @@ main {
 }
 
 /******************************/
+/* About */
+/******************************/
+.about__person > img {
+  height: 17rem;
+  margin-top: 3rem;
+  border-radius: 300rem;
+  -webkit-border-radius: 300rem;
+  -moz-border-radius: 300rem;
+  -ms-border-radius: 300rem;
+  -o-border-radius: 300rem;
+}
+
+.about__description > p {
+  font-size: 1.7rem;
+  color: rgb(42, 42, 42);
+  margin-top: 1rem;
+  line-height: 2.5rem;
+}
+
+.badge {
+  padding: 0.5rem 1rem;
+  border-radius: 50rem;
+  -webkit-border-radius: 50rem;
+  -moz-border-radius: 50rem;
+  -ms-border-radius: 50rem;
+  -o-border-radius: 50rem;
+}
+
+.badge-green {
+  color: white;
+  background-color: green;
+}
+
+.badge-black {
+  color: white;
+  background-color: black;
+}
+
+.badge-blue {
+  color: white;
+  background-color: blue;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/******************************/
 /* Footer */
 /******************************/
 .footer {

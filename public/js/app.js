@@ -30,43 +30,40 @@ const summaryBox = document.querySelector(domString.summaryBox);
 const dailyBoxText = document.querySelector(domString.dailyBoxText);
 const dailyBoxIcon = document.querySelector(domString.dailyBoxIcon);
 
-// searched.classList.add("hide");
-// result.classList.add("hide");
+searched.classList.add("hide");
+result.classList.add("hide");
 
 locationForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const location = searchInput.value;
+  const location = searchInput.value || "yangon";
 
   loading.classList.remove("hide");
   searching.textContent = `Searching for ${location} . . .`;
 
-  //   searched.classList.add("hide");
-  //   result.classList.add("hide");
+  searched.classList.add("hide");
+  result.classList.add("hide");
 
-  fetch(`/weather?address=${location}`).then(
-    (response) => {
-      response.json().then((data) => {
-        if (data.error) {
-          console.log(data.error);
-        } else {
-          searched.classList.remove("hide");
-          result.classList.remove("hide");
-          loading.classList.add("hide");
+  fetch(`/weather?address=${location}`).then((response) => {
+    response.json().then((data) => {
+      if (data.error) {
+        console.log(data.error);
+      } else {
+        searched.classList.remove("hide");
+        result.classList.remove("hide");
+        loading.classList.add("hide");
 
-          searchedAddress.textContent = data.location;
-          temperatureBox.textContent =
-            data.forecast.currently.temperature + "°F";
-          precipProbBox.textContent =
-            data.forecast.currently.precipProbability + "%";
-          humidityBox.textContent = data.forecast.currently.humidity + " grams";
-          dailyBoxText.textContent = data.forecast.daily;
-          summaryBox.textContent = data.forecast.currently.summary;
-          dailyBoxIcon.innerHTML += `<canvas id="${data.forecast.currently.icon}" width="64" height="64"></canvas>`;
-        }
-      });
-    }
-  );
+        searchedAddress.textContent = data.location;
+        temperatureBox.textContent = data.forecast.currently.temperature + "°F";
+        precipProbBox.textContent =
+          data.forecast.currently.precipProbability + "%";
+        humidityBox.textContent = data.forecast.currently.humidity + " grams";
+        dailyBoxText.textContent = data.forecast.daily;
+        summaryBox.textContent = data.forecast.currently.summary;
+        dailyBoxIcon.innerHTML += `<canvas id="${data.forecast.currently.icon}" width="64" height="64"></canvas>`;
+      }
+    });
+  });
 });
 
 /***************************************
