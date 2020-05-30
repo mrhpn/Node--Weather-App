@@ -1,6 +1,6 @@
 # Weather App
 
-There are a lots of apps and widgets out there associated with weather forecasting app and here is the next one.
+There are a lots of apps and widgets out there associated with weather forecasting and here is the next one.
 
 My purpose on this app is simply just to learn nodejs and express.
 
